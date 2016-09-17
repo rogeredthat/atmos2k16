@@ -65,19 +65,8 @@
               , l = (o("#skrollr-body"),
             new s(o("[data-map]"),t,t.find("[data-map-phone]")));
             l.updateDimentions(),
-            l.put(),
-            o.isDevice ? o(".js-video").remove() : (o(".js-video-placeholder").remove(),
-            o(window).load(function() {
-                o(".js-videoo").each(function() {
-                    navigator.userAgent.indexOf("Firefox") > 0 ? o(this).append('<video class="js-video ' + o(this).attr("data-class") + '" poster="' + o(this).prev("img").attr("src") + '" preload="metadata" loop><source src="' + o(this).attr("data-src") + '.webm" type="video/webm"><source src="' + o(this).attr("data-src") + '.mp4" type="video/mp4"></video>') : o(this).append('<video class="js-video ' + o(this).attr("data-class") + '" poster="' + o(this).prev("img").attr("src") + '" preload="none" loop><source src="' + o(this).attr("data-src") + '.webm" type="video/webm"><source src="' + o(this).attr("data-src") + '.mp4" type="video/mp4"></video>')
-                }),
-                a = o(".iPhone .js-video__slides"),
-                i = o(".js-video").fadeOut().each(function() {
-                    o(this).get(0).pause()
-                }),
-                "" === window.location.hash && (o(".js-video__nicer-way").fadeIn().get(0).play(),
-                o(".js-video__nicer-way").parent().prev(".iPhone-video-placeholder").fadeOut())
-            }));
+            l.put();
+         
             var c = 1;
             !function() {
                 function e(e, t) {
@@ -122,6 +111,7 @@
                 margin: .1
             };
             o(window).resize(function() {
+                    console.log('text');
                 var i = e();
                 phoneScale = Math.min(i.presentationWidth / i.width, i.presentationHeight / i.height),
                 phoneScale = Math.max(phoneScale, u.minScale),
@@ -141,7 +131,7 @@
                 })
             }).resize(),
             o(window).load(function() {
-                o(window).resize()
+                o(window).resize();
             });
             var d = "";
             o(".js-map-slide").on("mousedown", function() {
@@ -197,17 +187,14 @@
                     "fact" == r ? (f.addClass("_onFact"),
                     o(".iPhone-video-placeholder").next().fadeOut()) : (f.removeClass("_onFact"),
                     o(".iPhone-video-placeholder").next().fadeIn()),
-                    "nicer_way" == r && (o.isDevice || (o(".js-video__nicer-way").fadeIn().get(0).play(),
-                    o(".js-video__nicer-way").parent().prev(".iPhone-video-placeholder").fadeOut())),
+                    "nicer_way" == r,
                     "tours" == r && (setTimeout(function() {
                         o(".tour-nyc").airport(["2016"])
-                    }, 600),
-                    o.isDevice || (o(".js-video__tours").fadeIn().get(0).play(),
-                    o(".js-video__tours").parent().prev(".iPhone-video-placeholder").fadeOut())),
+                    }, 600)),
                     "map" == r && (l.updateDimentions(),
                     l.put(),
                     o(".phone-map").show()),
-                    "slides" == r && (o.isDevice || (o(".swiper-slide-active .js-video__slides").fadeIn().get(0).play(),
+                    "slides" == r && (o.isDevice || (
                     o(".swiper-slide-active .js-video__slides").eq(0).parent().prev(".iPhone-video-placeholder").fadeOut())),
                     "about" == r && o(".about-parallax-item, .about-rows ._row img").removeClass("_moveDown"),
                     "subscribe" == r && (o(".subscribe-parallax-item").removeClass("_moveDown"),
@@ -239,16 +226,7 @@
                 loop: !0,
                 useCSS3Transforms: !0,
                 loopAdditionalSlides: 0,
-                onSlideChangeStart: function(e) {},
-                onSlideChangeEnd: function(e) {
-                    o.isDevice || (a.each(function() {
-                        var e = o(this).get(0);
-                        e.pause(),
-                        e.currentTime = 0
-                    }),
-                    o(".js-video__slides").fadeIn().get(e.activeIndex).play(),
-                    o(".js-video__slides").eq(e.activeIndex).parent().prev(".iPhone-video-placeholder").fadeOut())
-                }
+                onSlideChangeStart: function(e) {}
             })
               , x = null
               , b = o("[data-slider-inner]").swiper({
@@ -1060,6 +1038,10 @@
                         e("body").css("font-size", "100%")
                 }
                 function L(n, i) {
+                    if (n != 'nicer_way')
+                        document.getElementsByClassName('logo')[0].classList.add('offset');
+                    else
+                        document.getElementsByClassName('logo')[0].classList.remove('offset');
                     t.navigation && (e("#fp-nav").find(".active").removeClass("active"),
                     n ? e("#fp-nav").find('a[href="#' + n + '"]').addClass("active") : e("#fp-nav").find("li").eq(i).find("a").addClass("active"))
                 }

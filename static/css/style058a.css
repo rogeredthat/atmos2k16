@@ -670,13 +670,27 @@ h5 {
 
 .logo {
     z-index: 999;
-    top: 19px;
-    left: 19px;
-    cursor: pointer
+    top:50%;
+    right:50%;
+    transform:translate(50%,-50%);
+    cursor: pointer;
+    transition: right 0.5s 0.1s,top 0.5s;
+}
+
+.logo.offset {
+    top: 6em;
+    right: 6em;
+    transition: right 0.5s, top 0.5s 0.25s;
+}
+
+.logo.offset > img {
+    height:9em;
+    transition: all 0.5s cubic-bezier(0,0,0,1);
 }
 
 .logo > img {
-	height:10em;
+	height: 25em;
+	transition: all 0.5s 0.5s cubic-bezier(0,0,0,1);
 }
 
 .share {
@@ -870,7 +884,7 @@ only screen and (min-resolution:2dppx) {
     position: absolute;
     top: 0;
     left: 0;
-    margin: 0
+    margin: 0;
 }
 
 .slider-item._slide-0 .slider-item-wrapper {
@@ -2967,7 +2981,6 @@ only screen and (min-resolution:2dppx) {
 .slider-item._slide-6 .subscribe-parallax div div.image, .subscribe-parallax-item > shadow > div:first-child {
 	height: 11em;
 	width: 11em;
-	/* border:2px solid #fff; */
 	box-shadow: 0px 0px 0px 2px rgba(255,255,255,1);
 	overflow:hidden;
 	position:relative;
@@ -2995,6 +3008,8 @@ height:100%;
     
 width:100%;
     
+background-blend-mode: lighten;
+    
 display: block;
     
 position:absolute;
@@ -3005,41 +3020,51 @@ border-radius: 50%;
     
 left: 0;
 }
-.slider-item._slide-6 .subscribe-parallax div div.image.one{
-     background-image:url("/static/img/team/background.jpg");
-}
-.slider-item._slide-6 .subscribe-parallax div div.image.one > div {
-     background-image:url("/static/img/team/akshay.png");
 
+.slider-item._slide-6 .subscribe-parallax div div.image.one > div {
+/*      background-image:url("/static/img/team/akshay.png"); */
 }
-.slider-item._slide-6 .subscribe-parallax div div.image.two{
-     background-image:url("/static/img/team/background.jpg");
-}
+
 .slider-item._slide-6 .subscribe-parallax div div.image.two > div {
-     background-image:url("/static/img/team/aniruddha.png");
-}
-.slider-item._slide-6 .subscribe-parallax div div.image.three{
-     background-image:url("/static/img/team/background.jpg");
+     background-image:url("/static/img/team/rajat.png");
 }
 .slider-item._slide-6 .subscribe-parallax div div.image.three > div {
-     background-image:url("/static/img/team/gopidev.png");
+     background-image:url("/static/img/team/balana.png");
 }
-.slider-item._slide-6 .subscribe-parallax div div.image.four{
-     background-image:url("/static/img/team/background.jpg");
+.slider-item._slide-6 .subscribe-parallax div div.image{
+background-image: linear-gradient(45deg, rgba(194, 233, 221, 0.5) 1%, rgba(104, 119, 132, 0.5) 100%), linear-gradient(-45deg, #494d71 0%, rgba(217, 230, 185, 0.5) 80%);
 }
 .slider-item._slide-6 .subscribe-parallax div div.image.four > div {
+     background-image:url("/static/img/team/somu.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.five > div {
+     background-image:url("/static/img/team/akshay.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.six > div {
+     background-image:url("/static/img/team/pruthvi.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.seven > div {
+     background-image:url("/static/img/team/sajal.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.eight > div {
      background-image:url("/static/img/team/monil.png");
 }
 .slider-item._slide-6 .subscribe-parallax div div.image > div.red {
-    background-color:rgba(255,0,0,0.5);
     z-index:+10;
     mix-blend-mode: darken;
+    -webkit-filter: hue-rotate(120deg);
+    opacity: 0;
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image > div.green {
-  background-color:rgba(0,255,0,0.5);
   mix-blend-mode: darken;
   z-index:+5;
+  -webkit-filter: hue-rotate(240deg);
+  opacity: 0;
+}
+
+.slider-item._slide-6 .subscribe-parallax div div.image > div.base {
+    mix-blend-mode: normal;
 }
 
 .slider-item._slide-6 .subscribe-parallax div:hover div.image > div.red {
@@ -3047,62 +3072,61 @@ left: 0;
 }
 
 .slider-item._slide-6 .subscribe-parallax div:hover div.image > div.green {
-  animation:glitch 0.25s 0.5s 1 linear;
+    animation:glitch 0.25s 0.5s 1 linear;
 }
 
 @keyframes glitch {
   0%{
-    transform:translateX(0%);
+    opacity: 1;
+    left:0%;
   }
   0.002% {
-    transform:translateX(-5%);
+    left:-5%;
   }
   4.98% {
-    transform:translateX(-5%);
+    left:-5%;
   }
   5% {
-    transform:translateX(0%);
+    left:0%;
   }
   9.98% {
-    transform:translateX(0%);
+    left:0%;
      mix-blend-mode:exclusion; 
   }
   10% {
-    transform:translateX(5%);
+    left:5%;
   }
   24.98% {
-    transform:translateX(5%);
+    left:5%;
   }
   25% {
-    transform:translateX(0%);
+    left:0%;
      mix-blend-mode:exclusion; 
   }
   74.98% {
-    transform:translateX(0%);
+    left:0%;
   }
   75% {
-    transform:translateX(2.5%);
+    left:2.5;;
   }
   79.98% {
-    transform:translateX(2.5%);
+    left:2.5;;
   }
   80% {
-    transform:translateX(4%);
+    left:4%;
   }
   89.98% {
-    transform:translateX(4%);
+    left:4%;
   }
   90% {
-    transform:translateX(-5%);
+    left:-5%;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image::before, .slider-item._slide-6 .subscribe-parallax div div.image::after {
-    background-image:inherit;
-    width:100%;
-    height:100%;
-    background-size:cover;
-    background-color:rgba(0,0,0,0.5);
 }
 
 .shadow_solid {
@@ -3119,8 +3143,8 @@ left: 0;
 	justify-content: space-around;
 	flex-direction:column;
 	z-index: +10;
+    opacity: 0;
 	position: relative;
-	/* left: 11em; */
 	width:0vw;
 	margin-left: 10px;
 	border-radius: 5px;
@@ -3130,13 +3154,14 @@ left: 0;
 	transform-origin:0% 0%;
 	transform:rotateX(-90deg);
 	pointer-events: auto;
-	transition:width 0.5s 0.5s, transform 0.25s cubic-bezier(0, 0, 0, 1);
+	transition:width 0.5s 0.5s,opacity 0s 0.25s, transform 0.25s cubic-bezier(0, 0, 0, 1);
 }
 
 .slider-item._slide-6 .subscribe-parallax > div:hover > div.flap, .subscribe-parallax-item:hover > shadow > div:nth-child(2) {
     width:15vw;
+    opacity: 1;
     transform:rotateX(0deg);
-    transition:width 0.5s, transform 0.5s 0.5s cubic-bezier(0, 0, 0.57, 1.83);
+    transition:width 0.5s,opacity 0s 0.5s, transform 0.5s 0.5s cubic-bezier(0, 0, 0.57, 1.83);
 }
 
 .subscribe-parallax-item > shadow > div:nth-child(2) > div:first-child, .slider-item._slide-6 .subscribe-parallax > div > div.flap > div._name {
@@ -3760,4 +3785,85 @@ only screen and (min-resolution:2dppx) {
 
 .swiper-wp8-vertical {
     -ms-touch-action: pan-x
+}
+.events-grid {
+   display:flex;
+   position:relative;
+   width:100%;
+   height:100%;
+   background:#445;
+   flex-direction:column;
+   padding:5px;
+   box-sizing:border-box;
+}
+.events-grid-row {
+    display:flex;
+    flex-direction:row;
+    flex-grow:1;
+    margin:5px 0px;
+}
+.events-grid-cell {
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    font-size: 9em;
+    color: #fff;
+    font-family: 'reforma grotesk light';
+    font-weight:300;
+    position:relative;
+    flex-grow:1;
+    box-sizing:border-box;
+    border:5px solid rgba(255,255,255,0.5);
+    margin:0px 5px;
+    background-position:50% 50%;
+    background-size:110%;
+    transition:all 0.5s 0s cubic-bezier(0,0,0,0.75);
+}
+.events-grid-cell::after {
+    background-image:linear-gradient(-10deg,rgba(0,0,0,0.55) 10%,rgba(0,0,0,.1));
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    opacity:0;
+    transition:all 0.5s cubic-bezier(0,0,0,1);
+}
+.events-grid-cell::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-image:url('/static/img/events.jpg');
+    background-size:110%;
+    transition:all 0.5s cubic-bezier(0,0,0,0.75);
+
+}
+.events-grid-cell:hover::after {
+    opacity:1;
+    transition:all 0.5s 0.5s cubic-bezier(0,0,0,1);
+
+}
+.events-grid-cell:hover::before {
+    
+    transition:all 0.5s 0.5s cubic-bezier(0,0,0,0.75);
+    transform: scale(1.25) rotateZ(10deg);
+}
+.events-grid-cell > span {
+    display:flex;
+    width:100px;
+    white-space:nowrap;
+    position:relative;
+    z-index:+1000;
+    justify-content:space-around;
+    color:transparent;
+    transition:color 0.5s cubic-bezier(0,0,0,1);
+}
+.events-grid-cell:hover > span {
+    color:white;
+    transition:color 0.5s 0.5s cubic-bezier(0,0,0,1);
 }
