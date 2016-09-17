@@ -2920,9 +2920,9 @@ only screen and (min-resolution:2dppx) {
 }
 
 .slider-item._slide-6 .subscribe-parallax > div {
-	height:9em;
+	height: 11em;
 	position:relative;
-	width: calc(9em + 15vw + 10px);
+	width: calc(11em + 15vw + 10px);
 	display: inline-block;
 	transform-origin: 50% 100%;
 }
@@ -2939,15 +2939,16 @@ only screen and (min-resolution:2dppx) {
     pointer-events: auto;
 }
 
-.subscribe-parallax-item._1 > * {
+.subscribe-parallax-item._1 {
+	margin:0 1%;
 }
 
 .subscribe-parallax-item._2 {
-	margin: 2em 2%;
+	margin: 2em 1%;
 }
 
 .subscribe-parallax-item._3 {
-	margin: 3em 3%;
+	margin: 3em 1%;
 	transform:scale(1);
 }
 
@@ -2964,15 +2965,15 @@ only screen and (min-resolution:2dppx) {
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image, .subscribe-parallax-item > shadow > div:first-child {
-	height: 9em;
-	width:9em;
-	border:2px solid #fff;
-    overflow:hidden;
+	height: 11em;
+	width: 11em;
+	/* border:2px solid #fff; */
+	box-shadow: 0px 0px 0px 2px rgba(255,255,255,1);
+	overflow:hidden;
 	position:relative;
 	border-radius:50%;
 	display: inline-block;
-    pointer-events: auto;
-    
+	pointer-events: auto;
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image {
@@ -2986,14 +2987,23 @@ only screen and (min-resolution:2dppx) {
 
 .slider-item._slide-6 .subscribe-parallax div div.image > div {
     
-    background-size:cover;
-    mix-blend-mode: multiply;
-    height:100%;
-    width:100%;
-    display: block;
-    position:absolute;
-    top:0;
-    left: 0;
+background-size:cover;
+    
+mix-blend-mode: screen;
+    
+height:100%;
+    
+width:100%;
+    
+display: block;
+    
+position:absolute;
+    
+top:0;
+    
+border-radius: 50%;
+    
+left: 0;
 }
 .slider-item._slide-6 .subscribe-parallax div div.image.one{
      background-image:url("/static/img/team/background.jpg");
@@ -3022,13 +3032,13 @@ only screen and (min-resolution:2dppx) {
 }
 .slider-item._slide-6 .subscribe-parallax div div.image > div.red {
     background-color:rgba(255,0,0,0.5);
-  z-index:+10;
-  mix-blend-mode:multiply;
+    z-index:+10;
+    mix-blend-mode: darken;
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image > div.green {
   background-color:rgba(0,255,0,0.5);
-  mix-blend-mode:multiply;
+  mix-blend-mode: darken;
   z-index:+5;
 }
 
@@ -3098,16 +3108,19 @@ only screen and (min-resolution:2dppx) {
 .shadow_solid {
 	background: rgba(0,0,0,0.2) !important;
 	border-color:transparent !important;
+	box-shadow: none !important;
 }
 
 .slider-item._slide-6 .subscribe-parallax > div > div.flap, .subscribe-parallax-item > shadow > div:nth-child(2) {
-	height:9em;
+	height: 9em;
+	margin-top: 1em;
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-direction:column;
 	z-index: +10;
 	position: relative;
+	/* left: 11em; */
 	width:0vw;
 	margin-left: 10px;
 	border-radius: 5px;
@@ -3560,6 +3573,20 @@ only screen and (min-resolution:2dppx) {
     position: relative;
 }
 
+.share-slide-socials ._soc-item::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 1px;
+    height: 10%;
+    top: 45%;
+    background: rgba(255,255,255,0.5);
+}
+
+.share-slide-socials ._soc-item:last-child::after {
+    display:none;
+}
+
 .share-slide-socials ._soc-item:last-child a {
     border-right: none;
 }
@@ -3571,10 +3598,10 @@ only screen and (min-resolution:2dppx) {
     right: 1px;
     bottom: 1px;
     left: 1px;
-    border-right: 1px solid rgba(255, 255, 255, 0.18);
+    /* border-right: 1px solid rgba(255, 255, 255, 0.18); */
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 40%;
 }
 
 .share-slide-socials ._soc-item a span {
@@ -3596,7 +3623,7 @@ only screen and (min-resolution:2dppx) {
 .share-slide-socials ._soc-item a._facebook {
     background-image: url(/static/img/slider/share/fb.png);
     transition: all .2s ease-in-out;
-    background-size: auto 50%;
+    background-size: auto 40%;
 }
 
 .share-slide-socials ._soc-item a._ig {
