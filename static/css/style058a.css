@@ -1805,8 +1805,8 @@ only screen and (min-resolution:2dppx) {
 ._ready._slide-2 ._letter._y_bottom,
 ._ready._slide-2 .tour-count-dummy._1,
 ._ready._slide-2 .tour-count-dummy._2 {
-    -webkit-animation-play-state: running;
-    animation-play-state: running
+    -webkit-animation-play-/state: running;
+    animation-play-/state: running
 }
 
 @-webkit-keyframes dummy-1 {
@@ -2386,8 +2386,8 @@ only screen and (min-resolution:2dppx) {
 ._ready ._icon-inner._compas,
 .local-ready ._icon-inner._cards,
 .local-ready ._icon-inner._pin {
-    -webkit-animation-play-state: running;
-    animation-play-state: running
+    -webkit-animation-play-/state: running;
+    animation-play-/state: running
 }
 
 ._slide-4 .swiper-slide {
@@ -2985,7 +2985,7 @@ only screen and (min-resolution:2dppx) {
 }
 
 .slider-item._slide-6 .subscribe-parallax div div.image > div {
-    background-image:url("https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/5/005/0b6/326/26019bf.jpg");
+    
     background-size:cover;
     mix-blend-mode: multiply;
     height:100%;
@@ -2995,7 +2995,31 @@ only screen and (min-resolution:2dppx) {
     top:0;
     left: 0;
 }
+.slider-item._slide-6 .subscribe-parallax div div.image.one{
+     background-image:url("/static/img/team/background.jpg");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.one > div {
+     background-image:url("/static/img/team/akshay.png");
 
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.two{
+     background-image:url("/static/img/team/background.jpg");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.two > div {
+     background-image:url("/static/img/team/aniruddha.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.three{
+     background-image:url("/static/img/team/background.jpg");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.three > div {
+     background-image:url("/static/img/team/gopidev.png");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.four{
+     background-image:url("/static/img/team/background.jpg");
+}
+.slider-item._slide-6 .subscribe-parallax div div.image.four > div {
+     background-image:url("/static/img/team/monil.png");
+}
 .slider-item._slide-6 .subscribe-parallax div div.image > div.red {
     background-color:rgba(255,0,0,0.5);
   z-index:+10;
