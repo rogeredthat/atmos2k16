@@ -894,8 +894,8 @@ only screen and (min-resolution:2dppx) {
 }
 
 .slider-item._slide-1 .slider-item-wrapper {
-    background-image: url(/static/img/slider/slide-bg-1-min.jpg);
-    background-size: cover
+    background-image: linear-gradient(30deg,rgba(0,0,0,0.75),transparent),url(/static/img/slider/slide-bg-1-min.jpg);
+    background-size: cover;
 }
 
 .slider-item._slide-2 {
